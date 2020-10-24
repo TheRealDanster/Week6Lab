@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,17 +8,21 @@
     </head>
     <body>
         <h1>Shopping list</h1>
-         <!--Print hello with username-->
-         <p><a href="ShoppingList?action=logout">Logout</a></p>
+         Hello, ${message} <a href="ShoppingList?action=logout">Logout</a>
          
          <form action="" method="POST">
-             <h2>Add Item</h2>
+             <h2>List</h2>
              <input type="text" name="item"><input type="submit" value="Add Item">
              <input type="hidden" name="action" value="add">
          </form>
          
          <form action="" method="POST">
-             <!--Loop for list items that are added-->
+            <ul>
+                <c:forEach var="item" items="${items}">
+                    <li><input type="radio" name="item" value="${item}">${item}</li>
+                </c:forEach>
+            </ul>
+             
              <input type="submit" value="Delete">
              <input type="hidden" name="action" value="delete">
          </form>
