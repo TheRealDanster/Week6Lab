@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Shopping list</h1>
-         Hello, ${message} <a href="ShoppingList?action=logout">Logout</a>
+         Hello, ${message} <a href="shoppinglist?action=logout">Logout</a>
          
          <form action="" method="POST">
              <h2>List</h2>
